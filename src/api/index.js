@@ -7,7 +7,7 @@ export const CounterService = {
   fetchCount: () => {
     return new Promise((resolve) => {
       axios.get("/api/fetch_count")
-        .then((res) => resolve(res.data));
+        .then((res) => resolve(res.data.count));
     });
   },
   patchCount: async (newCount) => {
