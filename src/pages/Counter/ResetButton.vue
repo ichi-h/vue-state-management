@@ -1,5 +1,5 @@
 <template>
-  <Button value="Reset" @click="reset" />
+  <Button value="Reset" @click="reset" :disabled="$store.state.counter.isLoading" />
 </template>
 
 <script>

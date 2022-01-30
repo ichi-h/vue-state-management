@@ -1,5 +1,5 @@
 <template>
-  <Button value="Increment" @click="increment" />
+  <Button value="Increment" @click="increment" :disabled="$store.state.counter.isLoading" />
 </template>
 
 <script>
