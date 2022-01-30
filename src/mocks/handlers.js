@@ -8,11 +8,11 @@ const sleep = (ms) => {
 
 export const handlers = [
   rest.get("/api/fetch_count", async (_, res, ctx) => {
-    await sleep(2000);
+    await sleep(500);
     return res(ctx.status(200), ctx.json({ count: 0 }));
   }),
   rest.patch("/api/patch_count", async (_, res, ctx) => {
-    await sleep(2000);
+    await sleep(500);
     return res(ctx.status(200));
   }),
 ];
