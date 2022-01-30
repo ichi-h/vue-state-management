@@ -6,13 +6,13 @@
 import Button from "../../components/uiParts/Button.vue";
 
 import store from "../../store";
-import { COUNTER__INCREMENT } from "../../store/counter/actions.msg";
+import { INCREMENT } from "../../store/counter/actions.msg";
 
 export default {
   components: { Button },
   methods: {
     increment: function () {
-      store.dispatch(COUNTER__INCREMENT);
+      store.dispatch(INCREMENT);
     },
   },
 }

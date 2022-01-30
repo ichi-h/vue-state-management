@@ -1,3 +1,3 @@
-export const COUNTER__INITIALIZE = "initialize";
-export const COUNTER__INCREMENT = "increment";
-export const COUNTER__RESET = "reset";
+export const INITIALIZE = "initialize";
+export const INCREMENT = "increment";
+export const RESET = "reset";

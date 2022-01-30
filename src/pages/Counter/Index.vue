@@ -14,12 +14,12 @@ import IncrementButton from "./IncrementButton.vue";
 import ResetButton from "./ResetButton.vue";
 
 import store from "../../store";
-import { COUNTER__INITIALIZE } from "../../store/counter/actions.msg";
+import { INITIALIZE } from "../../store/counter/actions.msg";
 
 export default {
   components: { Title, Count, IncrementButton, ResetButton },
   mounted: function () {
-    store.dispatch(COUNTER__INITIALIZE);
+    store.dispatch(INITIALIZE);
   },
 }
 </script>

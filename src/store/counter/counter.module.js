@@ -1,12 +1,12 @@
 import { CounterService } from "../../api";
 import {
-  COUNTER__INCREMENT,
-  COUNTER__INITIALIZE,
-  COUNTER__RESET
+  INCREMENT,
+  INITIALIZE,
+  RESET
 } from "./actions.msg";
 import {
-  COUNTER__SET_COUNT,
-  COUNTER__TOGGLE_LOADING
+  SET_COUNT,
+  TOGGLE_LOADING
 } from "./mutations.msg";
 
 // 状態の初期値
@@ -18,39 +18,39 @@ export const state = {
 // Vuexから非同期処理を行うメソッド群
 // APIの呼び出しなどが絡む場合は、こちらからmutationsを呼び出す
 export const actions = {
-  [COUNTER__INITIALIZE]: async ({ commit }) => {
-    commit(COUNTER__TOGGLE_LOADING);
+  [INITIALIZE]: async ({ commit }) => {
+    commit(TOGGLE_LOADING);
 
     const count = await CounterService.fetchCount();
-    commit(COUNTER__SET_COUNT, count);
+    commit(SET_COUNT, count);
 
-    commit(COUNTER__TOGGLE_LOADING);
+    commit(TOGGLE_LOADING);
     return count;
   },
-  [COUNTER__INCREMENT]: async ({ commit, state }) => {
-    commit(COUNTER__TOGGLE_LOADING);
+  [INCREMENT]: async ({ commit, state }) => {
+    commit(TOGGLE_LOADING);
 
     await CounterService.patchCount(state.count + 1);
-    commit(COUNTER__SET_COUNT, state.count + 1);
+    commit(SET_COUNT, state.count + 1);
 
-    commit(COUNTER__TOGGLE_LOADING);
+    commit(TOGGLE_LOADING);
   },
-  [COUNTER__RESET]: async ({ commit }) => {
-    commit(COUNTER__TOGGLE_LOADING);
+  [RESET]: async ({ commit }) => {
+    commit(TOGGLE_LOADING);
 
     await CounterService.patchCount(0);
-    commit(COUNTER__SET_COUNT, 0);
+    commit(SET_COUNT, 0);
 
-    commit(COUNTER__TOGGLE_LOADING);
+    commit(TOGGLE_LOADING);
   }
 };
 
 // 状態の更新
 export const mutations = {
-  [COUNTER__SET_COUNT]: (state, newCount) => {
+  [SET_COUNT]: (state, newCount) => {
     state.count = newCount;
   },
-  [COUNTER__TOGGLE_LOADING]: (state) => {
+  [TOGGLE_LOADING]: (state) => {
     state.isLoading = !state.isLoading;
   }
 };
