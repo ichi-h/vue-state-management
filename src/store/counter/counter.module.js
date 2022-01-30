@@ -39,18 +39,16 @@ export const mutations = {
 };
 
 // 状態の加工
-// 例えば、ソート等の加工を状態に行ってから返却したい場合に使う
-// 本来であれば、状態をそのまま返却するような場合は必要なし
-// 今回は解説のために用いる
-export const getters = {
-  count: (state) => {
-    return state.count;
-  },
-};
+// 例えば、ソート等の加工を状態に行ってから返却したい場合などに使う
+// 今回のような、状態をそのまま返却するような場合は必要ない
+// const getters = {
+//   count: (state) => {
+//     return state.count;
+//   },
+// };
 
 export default {
   state,
   actions,
   mutations,
-  getters,
 };
