@@ -13,14 +13,8 @@ import Count from "./Count.vue";
 import IncrementButton from "./IncrementButton.vue";
 import ResetButton from "./ResetButton.vue";
 
-import store from "../../store";
-import { INITIALIZE } from "../../store/counter/actions.msg";
-
 export default {
   components: { Title, Count, IncrementButton, ResetButton },
-  mounted: function () {
-    store.dispatch(INITIALIZE);
-  },
 }
 </script>
 

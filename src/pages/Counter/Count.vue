@@ -3,7 +3,13 @@
 </template>
 
 <script>
+import store from "../../store";
+import { INITIALIZE } from "../../store/counter/actions.msg";
+
 export default {
+  mounted: function () {
+    store.dispatch(INITIALIZE);
+  },
 }
 </script>
 
